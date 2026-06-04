@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BILGUNZORIG — The Grid</title>
+  <link rel="stylesheet" href="/static/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&family=VT323&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <div class="scanlines"></div>
+  <div class="crt-vignette"></div>
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- CURSOR -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ══ BOOT SCREEN ══ -->
+  <div id="boot-screen">
+    <div class="boot-wrap">
+      <pre class="boot-ascii" id="bootAscii"></pre>
+      <div class="boot-log" id="bootLog"></div>
+      <div class="boot-bar-wrap"><div class="boot-bar" id="bootBar"></div></div>
+      <div class="boot-skip">[ PRESS ANY KEY OR CLICK TO SKIP ]</div>
+    </div>
+  </div>
+
+  <!-- ══ MAIN SITE ══ -->
+  <div id="site" class="hidden">
+
+    <!-- NAV -->
+    <nav id="navbar">
+      <div class="nav-brand">
+        <span class="brand-b">B</span><span class="brand-rest">ILGUNZORIG</span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#hero"     class="nlink">[HOME]</a></li>
+        <li><a href="#about"    class="nlink">[ABOUT]</a></li>
+        <li><a href="#skills"   class="nlink">[SKILLS]</a></li>
+        <li><a href="#arcade"   class="nlink">[ARCADE]</a></li>
+        <li><a href="#contact"  class="nlink">[CONTACT]</a></li>
+      </ul>
+      <div class="nav-status"><span class="blink-dot"></span>ONLINE</div>
+    </nav>
+
+    <!-- ══ HERO ══ -->
+    <section id="hero">
+      <div class="hero-wrap">
+        <div class="hero-eyebrow">// WELCOME TO THE GRID OF //</div>
+        <h1 class="hero-name" id="heroName">
+          <span class="letter" style="--i:0">B</span><span class="letter" style="--i:1">I</span><span class="letter" style="--i:2">L</span><span class="letter" style="--i:3">G</span><span class="letter" style="--i:4">U</span><span class="letter" style="--i:5">N</span><span class="letter" style="--i:6">Z</span><span class="letter" style="--i:7">O</span><span class="letter" style="--i:8">R</span><span class="letter" style="--i:9">I</span><span class="letter" style="--i:10">G</span>
+        </h1>
+        <div class="hero-tagline"><span id="taglineText"></span><span class="cursor-blink">▮</span></div>
+        <div class="hero-desc">
+          Mongolian-born. Digitally unstoppable.<br/>
+          <span class="hl">Builder. Creator. Legend.</span>
+        </div>
+        <div class="hero-btns">
+          <a href="#arcade" class="btn btn-neon">⚡ PLAY GAMES</a>
+          <a href="#about"  class="btn btn-wire">LEARN MORE</a>
+        </div>
+        <div class="hero-ticker">
+          <span>BILGUNZORIG</span><span class="sep">◈</span>
+          <span>THE GRID</span><span class="sep">◈</span>
+          <span>MONGOLIAN LEGEND</span><span class="sep">◈</span>
+          <span>DIGITAL WARRIOR</span><span class="sep">◈</span>
+          <span>BILGUNZORIG</span><span class="sep">◈</span>
+          <span>THE GRID</span><span class="sep">◈</span>
+          <span>MONGOLIAN LEGEND</span><span class="sep">◈</span>
+          <span>DIGITAL WARRIOR</span><span class="sep">◈</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ ABOUT ══ -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="sec-label">// 001 // ABOUT BILGUNZORIG</div>
+        <h2 class="sec-title">WHO IS <span class="hl">BILGUNZORIG?</span></h2>
+        <div class="about-layout">
+          <div class="about-card-big">
+            <div class="about-avatar">
+              <div class="avatar-ring"></div>
+              <div class="avatar-inner">
+                <div class="avatar-letter">B</div>
+                <div class="avatar-glow"></div>
+              </div>
+            </div>
+            <div class="about-bio">
+              <p>Hey — I'm <span class="hl">Bilgunzorig</span>. I build things on the internet, break them, and build them better.</p>
+              <p>From the steppes of Mongolia to the digital frontier — I bring a unique perspective, relentless energy, and an obsession with making things that <span class="hl">look and feel incredible.</span></p>
+              <p>When I'm not coding, you'll find me exploring the grid, leveling up, and leaving neon footprints everywhere.</p>
+            </div>
+          </div>
+          <div class="about-stats-grid">
+            <div class="astat"><span class="astat-n">∞</span><span class="astat-l">IDEAS/DAY</span></div>
+            <div class="astat"><span class="astat-n">100%</span><span class="astat-l">PASSION</span></div>
+            <div class="astat"><span class="astat-n">MN</span><span class="astat-l">ORIGIN</span></div>
+            <div class="astat"><span class="astat-n">24/7</span><span class="astat-l">GRIND MODE</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ SKILLS ══ -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <div class="sec-label">// 002 // POWER LEVELS</div>
+        <h2 class="sec-title">BILGUNZORIG'S <span class="hl">SKILLS</span></h2>
+        <div class="skills-grid">
+          <div class="skill-bar-item" data-pct="92">
+            <div class="skill-name"><span class="sk-icon">◈</span> WEB DEVELOPMENT</div>
+            <div class="skill-track"><div class="skill-fill" style="--pct:92%"></div></div>
+            <div class="skill-pct">92%</div>
+          </div>
+          <div class="skill-bar-item" data-pct="85">
+            <div class="skill-name"><span class="sk-icon">◉</span> PYTHON / FLASK</div>
+            <div class="skill-track"><div class="skill-fill" style="--pct:85%"></div></div>
+            <div class="skill-pct">85%</div>
+          </div>
+          <div class="skill-bar-item" data-pct="88">
+            <div class="skill-name"><span class="sk-icon">◌</span> UI/UX DESIGN</div>
+            <div class="skill-track"><div class="skill-fill" style="--pct:88%"></div></div>
+            <div class="skill-pct">88%</div>
+          </div>
+          <div class="skill-bar-item" data-pct="78">
+            <div class="skill-name"><span class="sk-icon">◎</span> JAVASCRIPT</div>
+            <div class="skill-track"><div class="skill-fill" style="--pct:78%"></div></div>
+            <div class="skill-pct">78%</div>
+          </div>
+          <div class="skill-bar-item" data-pct="95">
+            <div class="skill-name"><span class="sk-icon">⬡</span> BEING AWESOME</div>
+            <div class="skill-track"><div class="skill-fill" style="--pct:95%"></div></div>
+            <div class="skill-pct">95%</div>
+          </div>
+          <div class="skill-bar-item" data-pct="100">
+            <div class="skill-name"><span class="sk-icon">★</span> BILGUNZORIG-NESS</div>
+            <div class="skill-track"><div class="skill-fill" style="--pct:100%"></div></div>
+            <div class="skill-pct">MAX</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ ARCADE ══ -->
+    <section id="arcade" class="section">
+      <div class="container">
+        <div class="sec-label">// 003 // BILGUNZORIG'S ARCADE</div>
+        <h2 class="sec-title">MINI <span class="hl">GAMES</span></h2>
+        <p class="arcade-sub">Take a break. Play a game. Beat BILGUNZORIG's high score.</p>
+
+        <!-- GAME TABS -->
+        <div class="game-tabs">
+          <button class="gtab active" onclick="switchGame('snake')">🐍 CYBER SNAKE</button>
+          <button class="gtab" onclick="switchGame('reaction')">⚡ REACTION TEST</button>
+          <button class="gtab" onclick="switchGame('memory')">🧠 MEMORY GRID</button>
+        </div>
+
+        <!-- ── SNAKE ── -->
+        <div class="game-panel" id="game-snake">
+          <div class="game-hud">
+            <div class="hud-item">PLAYER: <span class="hl">BILGUNZORIG</span></div>
+            <div class="hud-item">SCORE: <span id="snakeScore">0</span></div>
+            <div class="hud-item">BEST: <span id="snakeBest">0</span></div>
+          </div>
+          <div class="game-canvas-wrap">
+            <canvas id="snakeCanvas" width="400" height="400"></canvas>
+            <div class="game-overlay" id="snakeOverlay">
+              <div class="overlay-title">CYBER SNAKE</div>
+              <div class="overlay-sub">Navigate the grid. Eat the neon dots.<br/>Don't bite yourself — BILGUNZORIG doesn't quit!</div>
+              <button class="btn btn-neon" onclick="startSnake()">START GAME</button>
+              <div class="overlay-controls">WASD or Arrow Keys</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ── REACTION TEST ── -->
+        <div class="game-panel hidden" id="game-reaction">
+          <div class="game-hud">
+            <div class="hud-item">PLAYER: <span class="hl">BILGUNZORIG</span></div>
+            <div class="hud-item">BEST: <span id="reactBest">—</span></div>
+            <div class="hud-item">ATTEMPTS: <span id="reactAttempts">0</span></div>
+          </div>
+          <div class="reaction-arena" id="reactionArena" onclick="handleReactionClick()">
+            <div class="reaction-inner" id="reactionInner">
+              <div class="react-icon" id="reactIcon">👁</div>
+              <div class="react-msg" id="reactMsg">CLICK TO BEGIN</div>
+              <div class="react-sub" id="reactSub">Test BILGUNZORIG's reaction speed</div>
+              <div class="react-time" id="reactTime"></div>
+            </div>
+          </div>
+          <div class="reaction-history" id="reactHistory"></div>
+        </div>
+
+        <!-- ── MEMORY ── -->
+        <div class="game-panel hidden" id="game-memory">
+          <div class="game-hud">
+            <div class="hud-item">PLAYER: <span class="hl">BILGUNZORIG</span></div>
+            <div class="hud-item">PAIRS: <span id="memPairs">0</span>/8</div>
+            <div class="hud-item">MOVES: <span id="memMoves">0</span></div>
+          </div>
+          <div class="memory-grid" id="memoryGrid"></div>
+          <div class="game-overlay" id="memoryOverlay">
+            <div class="overlay-title">MEMORY GRID</div>
+            <div class="overlay-sub">Match the neon pairs.<br/>Train your mind like BILGUNZORIG!</div>
+            <button class="btn btn-neon" onclick="startMemory()">START GAME</button>
+          </div>
+          <div class="mem-win hidden" id="memWin">
+            <div class="win-title">⚡ BILGUNZORIG WINS! ⚡</div>
+            <div class="win-sub" id="winSub"></div>
+            <button class="btn btn-neon" onclick="startMemory()">PLAY AGAIN</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ══ CONTACT ══ -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <div class="sec-label">// 004 // REACH BILGUNZORIG</div>
+        <h2 class="sec-title">OPEN A <span class="hl">CHANNEL</span></h2>
+        <div class="contact-layout">
+          <div class="contact-left">
+            <p class="contact-copy">Want to build something legendary together? Got a project, an idea, or just want to say hi? <span class="hl">BILGUNZORIG</span> is listening.</p>
+            <div class="contact-links">
+              <div class="cl-item"><span class="cl-icon">◈</span>bilgunzorig@gmail.com</div>
+              <div class="cl-item"><span class="cl-icon">◉</span>github.com/bilgunzorig</div>
+              <div class="cl-item"><span class="cl-icon">◌</span>Ulaanbaatar, Mongolia 🇲🇳</div>
+            </div>
+            <div class="easter-egg-hint">psst... click my name in the footer 👀</div>
+          </div>
+          <form class="contact-form" onsubmit="submitForm(event)">
+            <div class="fg">
+              <label>YOUR NAME</label>
+              <input type="text" class="ci" placeholder="Who are you?" required/>
+            </div>
+            <div class="fg">
+              <label>YOUR EMAIL</label>
+              <input type="email" class="ci" placeholder="your@email.com" required/>
+            </div>
+            <div class="fg">
+              <label>MESSAGE FOR BILGUNZORIG</label>
+              <textarea class="ci" rows="4" placeholder="Say something awesome..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-neon btn-full">SEND TO BILGUNZORIG ⟶</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══ FOOTER ══ -->
+    <footer id="footer">
+      <div class="footer-inner">
+        <div class="footer-name" id="footerName" onclick="easterEgg()">BILGUNZORIG</div>
+        <div class="footer-copy">© 2099 BILGUNZORIG. MONGOLIAN MADE. DIGITALLY UNSTOPPABLE.</div>
+        <div class="footer-sig">BUILT WITH ⚡ BY BILGUNZORIG</div>
+      </div>
+    </footer>
+
+    <!-- EASTER EGG MODAL -->
+    <div class="modal-overlay hidden" id="eggModal" onclick="closeEgg()">
+      <div class="modal-box" onclick="e=>e.stopPropagation()">
+        <div class="egg-title">🥚 SECRET UNLOCKED!</div>
+        <div class="egg-text">You found BILGUNZORIG's easter egg!<br/>You are officially a <span class="hl">LEGEND</span> of the grid.</div>
+        <div class="egg-name-rain" id="eggRain"></div>
+        <button class="btn btn-neon" onclick="closeEgg()">CLOSE</button>
+      </div>
+    </div>
+
+  </div><!-- /site -->
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
