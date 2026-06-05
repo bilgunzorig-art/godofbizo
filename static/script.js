@@ -413,7 +413,7 @@ function handleReactionClick(){
 // ════════════════════════════════
 //  GAME 3: MEMORY GRID
 // ════════════════════════════════
-const EMOJIS=['🔥','⚡','🧠','💜','🌐','🎮','🚀','◈'];
+const EMOJIS=['🔥','⚡','%^&**&','💜','🌐','🎮','🚀','◈'];
 let memCards=[], memFlipped=[], memMatched=0, memMoves=0, memLocked=false, memoryStarted=false;
 
 function startMemory(){
